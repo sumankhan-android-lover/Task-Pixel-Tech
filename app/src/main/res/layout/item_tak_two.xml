@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:scaleType="centerCrop"
+    tools:src="@drawable/ic_launcher_background"
+    android:id="@+id/image"
+    android:padding="8dp"
+    android:elevation="4dp"/>

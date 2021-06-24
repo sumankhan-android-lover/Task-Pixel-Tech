@@ -3,13 +3,17 @@ package com.frndzcode.testpixeltech.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.OkHttpResponseAndJSONObjectRequestListener;
+import com.frndzcode.testpixeltech.R;
 import com.frndzcode.testpixeltech.adapter.TaskOneAdapter;
 import com.frndzcode.testpixeltech.databinding.ActivityTaskOneBinding;
 import com.frndzcode.testpixeltech.model.TaskModel;
@@ -88,5 +92,26 @@ public class TaskOneActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_second_task, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.task:
+                actionNextTask();
+                break;
+        }
+        return true;
+    }
+
+    private void actionNextTask() {
+        Intent intent = new Intent(activity,TaskTwoActivity.class);
+        startActivity(intent);
     }
 }
